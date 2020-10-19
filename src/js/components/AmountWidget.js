@@ -38,12 +38,24 @@ export class AmountWidget extends BaseWidget {
 
     thisWidget.dom.linkDecrease.addEventListener('click', function (e) {
       e.preventDefault();
-      thisWidget.value = ((thisWidget.value) - 1);
+      if (thisWidget.dom.input == document.querySelector('.hours-amount input')) {
+        thisWidget.value = thisWidget.value - 0.5;
+      } else {
+        thisWidget.value = thisWidget.value - 1;
+      }
     });
+
     thisWidget.dom.linkIncrease.addEventListener('click', function (e) {
       e.preventDefault();
-      thisWidget.value = ((thisWidget.value) + 1);
+      if (thisWidget.dom.input == document.querySelector('.hours-amount input')) {
+        thisWidget.value = thisWidget.value + 0.5;
+      } else {
+        thisWidget.value = ((thisWidget.value) + 1);
+      }
     });
+  }
+  parseValue(newValue) {
+    return parseFloat(newValue);
   }
 
   renderValue() {

@@ -165,6 +165,66 @@ class Booking {
     return allAvailable;
   }
 
+  getRangeSelectorGradientColors(tables) {
+    return tables === 0 ? 'green' : tables === 1 ? 'green' : tables === 2 ? 'orange' : 'red';
+  }
+
+  updateRangeSelector() {
+    const thisBooking = this;
+
+    let hourTemplate = {
+      12: [],
+      12.5: [],
+      13: [],
+      13.5: [],
+      14: [],
+      14.5: [],
+      15: [],
+      15.5: [],
+      16: [],
+      16.5: [],
+      17: [],
+      17.5: [],
+      18: [],
+      18.5: [],
+      19: [],
+      19.5: [],
+      20: [],
+      20.5: [],
+      21: [],
+      21.5: [],
+      22: [],
+      22.5: [],
+      23: [],
+      23.5: [],
+      0: []
+    };
+
+    const tablesArray = [];
+    const newHours = Object.assign(hourTemplate, thisBooking.booked[thisBooking.datePicker.correctValue]);
+    let hour0 = undefined;
+
+    if (newHours[0]) {
+      hour0 = newHours[0];
+      delete newHours[0];
+    }
+    if (newHours[0.5]) delete newHours[0.5];
+
+    Object.keys(newHours).sort((a, b) => a - b).forEach(function (key) {
+      tablesArray.push(newHours[key].filter(x => x !== ''));
+    });
+    if (hour0) tablesArray.push(hour0);
+    const displayedValues = tablesArray.slice(0, 25);
+
+    let gradientStyle = 'linear-gradient(to right';
+    displayedValues.forEach((value, index) => {
+      gradientStyle += `, ${this.getRangeSelectorGradientColors(value.length)} ${index / displayedValues.length * 100}%, ${this.getRangeSelectorGradientColors(value.length)} ${(index + 1) / displayedValues.length * 100}%`;
+    });
+    gradientStyle += ')';
+
+    document.getElementsByClassName('rangeSlider')[0].style.background = gradientStyle;
+  }
+
   updateDOM() {
     const thisBooking = this;
 
@@ -187,7 +247,7 @@ class Booking {
       }
     }
     thisBooking.checkBookingVolume();
-
+    thisBooking.updateRangeSelector();
   }
 
   render(wrapper) {
@@ -301,7 +361,6 @@ class Booking {
       .then(function (response) {
         return response.json();
       }).then(function (parsedResponse) {
-        console.log('parsedResponse', parsedResponse);
         alert('Zapisano');
       });
 
