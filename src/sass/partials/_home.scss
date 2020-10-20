@@ -57,8 +57,6 @@
       }
     }
 
-
-
     &:nth-child(2) {
       background-image: url('../images/assets/pizza-2.jpg');
     }
@@ -106,10 +104,10 @@
 
       li {
         background-color: lightgray;
+      }
 
-        &.active {
-          background-color: $color-dark;
-        }
+      li.active {
+        background-color: $color-dark;
       }
     }
   }
@@ -163,7 +161,6 @@
       &:hover .image-layer {
         display: block;
       }
-
     }
   }
 }
