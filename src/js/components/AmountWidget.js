@@ -50,7 +50,7 @@ export class AmountWidget extends BaseWidget {
       if (thisWidget.dom.input == document.querySelector('.hours-amount input')) {
         thisWidget.value = thisWidget.value + 0.5;
       } else {
-        thisWidget.value = ((thisWidget.value) + 1);
+        thisWidget.value = thisWidget.value + 1;
       }
     });
   }
