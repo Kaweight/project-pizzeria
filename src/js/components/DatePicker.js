@@ -1,3 +1,4 @@
+/* global flatpickr */
 import {
   select,
   settings
