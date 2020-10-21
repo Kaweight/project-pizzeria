@@ -154,3 +154,9 @@
   }
 
 }
+
+@media (max-width: 600px) {
+  .cart {
+    display: none;
+  }
+}

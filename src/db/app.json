@@ -153,7 +153,7 @@
         "<img class=\"active\" src=\"images/salad/plate.svg\">",
         "<img class=\"active ingredients-cucumber\" src=\"images/salad/cucumber.svg\" style=\"z-index: 1;\">",
         "<img class=\"active ingredients-tomatoes\" src=\"images/salad/tomatoes.svg\" style=\"z-index: 2;\">",
-        "<img class=\"active ingredients-olives\" src=\"images/salad/salad-olives.svg\" style=\"z-index: 3;\">",
+        "<img class=\"active ingredients-olives-topping\" src=\"images/salad/salad-olives.svg\" style=\"z-index: 3;\">",
         "<img class=\"active ingredients-feta\" src=\"images/salad/feta.svg\" style=\"z-index: 4;\">",
         "<img class=\"active ingredients-herbs\" src=\"images/salad/herbs.svg\" style=\"z-index: 5;\">",
         "<img class=\"active ingredients-cheese\" src=\"images/salad/cheese.svg\" style=\"z-index: 6;\">",
@@ -174,7 +174,7 @@
               "price": 1,
               "default": true
             },
-            "olives": {
+            "olives-topping": {
               "label": "Olives",
               "price": 2,
               "default": true
