@@ -19,8 +19,6 @@ $radius: 4px;
 
 $base-size: 12px;
 
-/* Mixins */
-
 @mixin btn($btn-bg, $btn-text, $btn-border) {
   background: $btn-bg;
   color: $btn-text;
@@ -75,8 +73,6 @@ $base-size: 12px;
   max-height: 1000px;
   opacity: 1;
 }
-
-/* Helpers */
 
 .no-spacing {
   margin: 0;

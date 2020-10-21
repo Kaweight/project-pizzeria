@@ -47,11 +47,6 @@ export class HourPicker extends BaseWidget {
     const thisWidget = this;
     thisWidget.dom.output.innerHTML = thisWidget.value;
   }
-
-  // possibilityOfBooking() {
-  //   const thisWidget = this;
-
-  // }
 }
 
 export default HourPicker;
