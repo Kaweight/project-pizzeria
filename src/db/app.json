@@ -176,7 +176,7 @@
             },
             "olives": {
               "label": "Olives",
-              "price": 1,
+              "price": 2,
               "default": true
             },
             "feta": {
